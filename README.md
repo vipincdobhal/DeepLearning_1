@@ -14,7 +14,6 @@ logged to Weights & Biases (W&B).
 | `evaluate.py` | evaluation function; script to re-evaluate a saved model |
 | `run_experiments.py` | all controlled experiments for Question 2 |
 | `sweep.yaml` | optional random W&B sweep |
-| `plots.py` | local matplotlib loss/accuracy curves |
 | `best_model.pt` | trained weights of the best configuration |
 
 ## Environment
