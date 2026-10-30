@@ -1,0 +1,17 @@
+# OPTIONAL: a random W&B sweep that mixes all settings (gives a rich parallel-coordinates plot).
+# Usage:
+#   wandb sweep sweep.yaml          -> prints a sweep id like  user/vgg6-cifar10/abc123
+#   wandb agent user/vgg6-cifar10/abc123 --count 20
+program: train.py
+method: random
+metric:
+  name: val_acc
+  goal: maximize
+parameters:
+  activation:   {values: [relu, sigmoid, tanh, silu, gelu]}
+  optimizer:    {values: [sgd, nesterov, adam, adagrad, rmsprop, nadam]}
+  lr:           {distribution: log_uniform_values, min: 0.0001, max: 0.01}
+  batch_size:   {values: [32, 64, 128, 256]}
+  epochs:       {values: [30, 50, 70]}
+  batch_norm:   {values: [true, false]}
+  weight_decay: {values: [0.00005, 0.0005]}
