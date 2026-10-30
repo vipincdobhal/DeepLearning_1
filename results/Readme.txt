@@ -1,0 +1,1 @@
+This folder is used for saving the results of model run in form of json
